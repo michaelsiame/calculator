@@ -1,0 +1,75 @@
+body{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shape{
+    background-color: black;
+    width: 300px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: auto;
+    border-radius: 20px;
+}
+.screen{
+    margin: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: white;
+    width: 250px;
+    height: 80px;
+    
+}
+.screen p{
+    font-size: 25px;
+    font-weight: bolder;
+    padding-right: 10px;
+    margin-top: 50px;
+    display: flex;
+    float: inline-end;
+    color: black;
+}
+.numpad{
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 1000;
+    margin-top: 30px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 80px;
+    border: 2px solid white;
+    background-color: gray;
+    width: 250px;
+    height: 400px;
+    column-gap: 10px;
+    
+}
+.numpad p{
+    justify-content: center;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+}
+.mixed{
+    grid-row: span 2;
+}
+#delete{
+    color: red;
+}
+#equal{
+    color: white;
+    background-color: rgb(6, 184, 6);
+    height: 110px;
+}
+.numpad p:hover{
+    background-color: white;
+}

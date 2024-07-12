@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="shape">
+        <div class="screen">
+            <p id="displaytext">0</p>
+        </div>
+        <div class="numpad">
+            <p id="clear">C</p>
+            <p id="division">/</p>
+            <p id="multiplication">*</p>
+            <p id="delete">⌫</p>
+            <p id="7">7</p>
+            <p id="8">8</p>
+            <p id="9">9</p>
+            <p id="minus">-</p>
+            <p id="4">4</p>
+            <p id="5">5</p>
+            <p id="6">6</p>
+            <p id="addition">+</p>
+            <p id="1">1</p>
+            <p id="2">2</p>
+            <p id="3">3</p>
+            <p class="mixed" id="equal">=</p>
+            <p id="percent">%</p>
+            <p id="0">0</p>
+            <p id=".">.</p>
+        </div>
+    </div>
+    <script>
+        let screen = document.getElementById("displaytext");
+        let numpad = document.getElementsByClassName("numpad")[0];
+        let currentInput = "";
+
+        numpad.addEventListener("click", function(event) {
+            let target = event.target;
+            let value = target.innerText;
+            
+            if (value === "C") {
+                currentInput = "";
+            } else if (value === "=") {
+                try {
+                    currentInput = eval(currentInput);
+                } catch {
+                    currentInput = "Error";
+                }
+            } else if (value === "⌫") {
+                currentInput = currentInput.slice(0, -1);
+            } else {
+                currentInput += value;
+            }
+            
+            screen.innerText = currentInput;
+        });
+    </script>
+</body>
+</html>
